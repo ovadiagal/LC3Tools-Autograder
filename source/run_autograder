@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Build directory shouldn't exist unless you manually created it or
+# the script was cancelled midway, but just to be sure:
+if [ -d "source/lc3tools/build" ]; then
+    rm -r "source/lc3tools/build"
+fi
+
+# Build lc3tools
+cd source/lc3tools
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+
+# Run the tests
+cd ..
+cd ..
+cd ..
+
+## Copy assignment into LC3Tools folder
+search_dir=submission
+for entry in "submission"/*
+do
+  withExtension=$(basename "$entry")
+  filename="${withExtension%.*}"
+  cp "submission/${filename}.asm" "source/lc3tools/${filename}.asm"
+  source/lc3tools/build/bin/${filename} source/lc3tools/${filename}.asm >> output.txt
+done
+
+# # Parse output.txt into a nice JSON for Gradescope
+python3 source/parse.py
+
+## Clean up after yourself!
+rm "output.txt"
+rm -r "source/lc3tools/build"
+
+for entry in "submission"/*
+do
+  withExtension=$(basename "$entry")
+  filename="${withExtension%.*}"
+  # Copy assignment into lc3tools root folder
+  rm "source/lc3tools/${filename}.asm"
+  rm "source/lc3tools/${filename}.obj"
+done
