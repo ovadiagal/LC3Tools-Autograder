@@ -8,7 +8,7 @@ To run locally:
 - Place any .asm files you wish to autograde inside the `submission` folder.
 - Place the corresponding autograders inside `source/lc3tools/test/tests`. Make sure your assembly files and their corresponding autograder have the same name (i.e. `linkedlist.cpp` will run on `linkedlist.asm`).
 - From the root directory, run `./source/run_autograder`
-- Results will be available inside the results folder as a JSON. Check out [Gradescope's JSON formatting rules here.](https://gradescope-autograders.readthedocs.io/en/latest/specs/#output-format)
+- Results will be available inside the `results` folder as a JSON. Check out [Gradescope's JSON formatting rules here.](https://gradescope-autograders.readthedocs.io/en/latest/specs/#output-format)
 
 To add to a Gradescope image:
 
