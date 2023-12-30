@@ -1,4 +1,4 @@
-# LC3Tools Autograding for Gradescope
+# Primitive LC3Tools Autograding for Gradescope
 
 Template for autograding LC-3 assembly programs with [LC3Tools](https://github.com/chiragsakhuja/lc3tools) and Gradescope's Docker images. Will likely be rebuilt into a [zucchini](https://github.com/zucchini/zucchini) grader down the line.
 [Learn how to write an autograder using LC3Tools here.](https://github.com/chiragsakhuja/lc3tools/blob/master/docs/TEST.md)
